@@ -4,7 +4,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estilosIndex.css" type="text/css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+		
+		<meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <title>Distribuciones DPA</title>
     </head>
     <body id="fondoimagen">
@@ -19,7 +23,25 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 
 
 	<nav id="menu" >
-		<a href="index.jsp"><img src="imagenes/logo2.png" alt="icono"id="icono"></a>
+	<!-- 
+	<input type="checkbox" name="" id="check">
+	<label for="check" id="checkbtn">
+	<i class="fa fa-bars"></i>
+	
+	</label> -->
+
+	<a href="#" class="boton-responsive">
+          <span class="barra"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+          <span class="barra"></span>
+        </a>
+
+
+
+
+
+		<a href="index.php"><img src="imagenes/logo2.png" alt="icono"id="icono"></a>
 		
 		 <ul >
 		<li class="nivel1" ><a href="hola.php">Inicio</a></li>
