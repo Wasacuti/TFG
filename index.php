@@ -29,14 +29,15 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 	<i class="fa fa-bars"></i>
 	
 	</label> -->
-
 	<a href="#" class="boton-responsive">
           <span class="barra"></span>
           <span class="barra"></span>
           <span class="barra"></span>
-          <span class="barra"></span>
+		  <span class="barra"></span>
         </a>
 
+
+	
 
 
 
