@@ -4,7 +4,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estilosIndex.css" type="text/css">
-		<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+		
+		
+		
 
 		
 		<meta charset="UTF-8"/>
@@ -29,13 +31,14 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 	<i class="fa fa-bars"></i>
 	
 	</label> -->
-	<a href="#" class="boton-responsive">
+	<a href="#" class="boton-responsive" id="boton-bar">
           <span class="barra"></span>
           <span class="barra"></span>
           <span class="barra"></span>
 		  <span class="barra"></span>
         </a>
 
+		
 
 	
 
@@ -44,6 +47,8 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 
 		<a href="index.php"><img src="imagenes/logo2.png" alt="icono"id="icono"></a>
 		
+
+		<div class="menu-extensible">
 		 <ul >
 		<li class="nivel1" ><a href="hola.php">Inicio</a></li>
 		<li class="nivel1" ><a href="#">Acerca de nosotros</a></li>
@@ -59,7 +64,9 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 			<li class="nivel1" ><a href="#">Contáctanos</a></li>
 						<li class="nivel1" ><a href="inicio_sesion.php">Iniciar sesión</a></li>
 						
-						
+
+
+				</div>		
 
 
 		
@@ -143,4 +150,5 @@ Esta parte se crea para añadir las cajas de texto de la parte de abajo
 
 <footer class="footie"> Todos los derechos reservados hecho por Emanuel Lopez</footer>
 </body>
+<script src="validaciones.js" ></script>
 </html>

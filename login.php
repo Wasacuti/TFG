@@ -3,7 +3,7 @@
 	$dbhost="localhost";
 	$dbuser="root";
 	$dbpass="";
-	$dbname="prueba1";
+	$dbname="tfg-bd";
 
 	try {
 	    $conexion = new mysqli($dbhost,$dbuser,$dbpass,$dbname);

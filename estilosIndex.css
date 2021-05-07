@@ -18,7 +18,7 @@ III CUATRIMESTRE
 	margin:0px;
 	padding:0px;
 	border: 0px;
-	font-family: helvetica,sans-serif,VERDANA;
+	font-family: sans-serif,VERDANA,helvetica;
 	font-size: 18px;
 	
 	
@@ -115,7 +115,7 @@ III CUATRIMESTRE
 	}
 	#menu ul li:hover  ul.nivel2, #menu ul li a:hover  ul.nivel2{
 		/*Se muestra el submenu cuando se poseciona encima del enlace*/
-		display: inline-block; ;
+		display: inline-block; 
 		background-color:#fff;
 		color:#000;
 		}
@@ -300,6 +300,117 @@ III CUATRIMESTRE
 	  color:black;
 	  bottom: 0;
 	}
+
+
+	/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	/*Se crea GRID PARA PRODUCTOS */
+
+	.grid-productos{
+		margin-top: 300px;
+		display: grid;
+		background-color: #000;
+		grid-template-columns: repeat(3,1fr);
+		grid-template-rows: 400px 400px;
+		grid-gap: 10px;
+		opacity: 0.9;
+		font-size: 12px;
+		
+	}
+
+	.grid-productos .caja-prod{
+		margin:10px;
+		font-size: 12px;
+		color: #fff;
+		background-color: #333;
+		align-items: center;
+		max-width: 400px;
+		text-align: left;
+		padding: 15px;
+
+	}
+
+	.grid-productos  h1{
+		font-family: sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: -0.48px;
+    text-transform: none;
+    font-size: 24px;
+	text-align: center;
+	color:#FDFEFE;
+
+	}
+
+
+	.grid-productos p{
+		font-size: 14px;
+		font-family: sans-serif,helvetica,arial;
+		text-align: left;
+		color:#fff;
+		margin: 10px 10px 10px 30px;
+	   }
+
+	.grid-productos .caja-prod img{
+		float: center;
+		width: 180px;
+		height: 110px;
+		align-items: center;
+		margin: 0px 40px ;
+		margin-bottom:5px ;
+
+
+	}
+
+	.grid-productos .caja-prod .btn{
+	
+		margin:20px ;
+	background-color: white;
+	text-decoration: none;
+	text-align: right;
+	font-weight: 530;
+	display: flex;
+	align-items: center;
+	width: 140px;
+	height: 50px;
+	justify-content: center;
+	border-radius: 3px;
+	color: black;
+	font-size: 14px;
+	opacity: 0.9;
+	}
+
+
+	.grid-productos .caja-prod .btn:hover {
+	
+		background-color:#0e83f7;
+		
+		
+		}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	/*Se crea para el encabezado */
+
+
+
+	.encabezado{
+		font-size: 64px;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		margin: 120px 50px;
+		color:	#FDFEFE;
+		border-radius: 3px;
+		font-weight: 600;
+
+
+	}
+
+
+
+
+
+
+
 	
 	/*----------------------------Estilos para el formulario de crear tour------------------------------------------*/
 	
@@ -316,6 +427,16 @@ III CUATRIMESTRE
 		font-size: 18px;
 		
 		
+		}
+
+		.menu-extensible{
+			display: none;
+
+		}
+
+		.menu-extensible.active {
+			display: inline-block;
+			width: 100%;
 		}
 		#icono {
 		  float: left;
@@ -367,6 +488,8 @@ III CUATRIMESTRE
 			width: 100%;
 			
 		}
+		
+
 	
 		.contenido{
 	

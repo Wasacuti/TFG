@@ -1,0 +1,3 @@
+CREATE TABLE `tfg-bd`.`clientes` ( `cod_cte` INT(3) NOT NULL AUTO_INCREMENT , `nombre_cte` VARCHAR(32) NOT NULL , `correo_cte` VARCHAR(64) NOT NULL , `password_cte` VARCHAR(32) NOT NULL ,'telefono_cte' INT(10) NOT NULL,'direccion_cte' VARCHAR(256)  NOT NULL, PRIMARY KEY (`cod_cte`)) ENGINE = InnoDB;
+
+INSERT INTO `clientes` (nombre_cte, correo_cte,password_cte,telefono_cte,direccion_cte) VALUES ('MarioPerez','mario@gmail.com','password',84848484,  'Heredia Costa RICA' );
