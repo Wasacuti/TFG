@@ -11,7 +11,7 @@ $validador=true;
 if (!isset($_REQUEST['check'])) {
 	$errorLogin="Error al ingresar";
 	include_once('Registrar_usuario.php');
-	header("location:Registrar_usuario.php?respuesta=5");	
+	header("location:Registrar_usuario.php?error=5");	
 	$validador=false;		  
   }
 
@@ -23,14 +23,14 @@ echo $nombre. $correo. $password. $tel. $direccion;
 if (empty($nombre) || empty($correo) || empty($password) || empty($tel) || empty($direccion) ) {
  		$errorLogin="Error al ingresar";
  		include_once('Registrar_usuario.php');
- 		header("location:Registrar_usuario.php?respuesta=1");	
+ 		header("location:Registrar_usuario.php?error=1");	
 		 $validador=false;		 
 }
 
 if (strlen($nombre)<8 || strlen($correo)<8 || strlen($password)<8|| strlen($tel)<8 || strlen($direccion)<8 ) {
 	$errorLogin="Error al ingresar";
 	include_once('Registrar_usuario.php');
-	header("location:Registrar_usuario.php?respuesta=2");	
+	header("location:Registrar_usuario.php?error=2");	
 	$validador=false;		 
 }
 
@@ -38,7 +38,7 @@ if (strlen($nombre)<8 || strlen($correo)<8 || strlen($password)<8|| strlen($tel)
 if (!filter_var($correo,FILTER_VALIDATE_EMAIL) ) {
 	$errorLogin="Error al ingresar";
 	include_once('Registrar_usuario.php');
-	header("location:Registrar_usuario.php?respuesta=3");	
+	header("location:Registrar_usuario.php?error=3");	
 	$validador=false;		 
 }
 
@@ -46,7 +46,7 @@ if (!filter_var($correo,FILTER_VALIDATE_EMAIL) ) {
 if ($password !=$password_confirmar ) {
 	$errorLogin="Error al ingresar";
 	include_once('Registrar_usuario.php');
-	header("location:Registrar_usuario.php?respuesta=6");	
+	header("location:Registrar_usuario.php?error=6");	
 	$validador=false;		 
 }
 
@@ -76,7 +76,7 @@ if ($validador) {
 		 if ($result->num_rows > 0){
 			$errorLogin="Error al ingresar";
 			include_once('Registrar_usuario.php');
-			header("location:Registrar_usuario.php?respuesta=4");	
+			header("location:Registrar_usuario.php?error=4");	
 			$validador=false;
 
 		 }
@@ -88,7 +88,7 @@ if ($validador) {
 			$result = $conexion->query(	$sql);
 			$errorLogin="Datos ingresados correctamente";
 			include_once('Registrar_usuario.php');
-			header("location:Registrar_usuario.php?respuesta=7");
+			header("location:Registrar_usuario.php?error=7");
 
 		 }
 

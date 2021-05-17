@@ -4,58 +4,15 @@ session_start();
 error_reporting(0);
 $varsesion=$_SESSION['nombre'];
 
-/* 
-Se valida que exista la sesión; está fue enviada desde la página PHP login.php 
-*/
 
-if ($varsesion==null || $varsesion='' ) {
+if ($varsesion==null || $varsesion=''  ) {
 echo "no autorizado";
-   header("location:inicio_sesion.php");
-die();
-} 
-
-
-
-/* 
-Es necesario conectarse a la base de datos para validar que el usuario que ingresa es administrador y no un cliente
-luego se valida que el usuario exista; en dado caso que no exista se reenvia a la página de inicio de sesión 
-
-*/
-	$dbhost="localhost";
-	$dbuser="root";
-	$dbpass="";
-	$dbname="tfg-bd";
-
-	try {
-		$conexion = new mysqli($dbhost,$dbuser,$dbpass,$dbname);
-		if ($conexion->connect_errno >0) {
-			die("Error no se pudo conectar a la BD");
-		}
-
-	//Se guarda la sesión en la variable sesion_actual
-
-	$sesion_actual=$_SESSION['nombre'];
-$sql = "SELECT * FROM `usuarios` WHERE user = '$sesion_actual'"; //Se crea la consulta si existe el usuario en la tabla administradores
-$result = $conexion->query(	$sql); //Se envía la consulta a la Base de datos
-	
-//Se valida que haya un registro  si no hay; desconecta la sesión y reenvia al login
-if (!($result->num_rows > 0)) {
-	echo "no autorizado";
-  header("location:inicio_sesion.php");  //Se redirige a inicio de sesión 
+    header("location:inicio_sesion.php");
 die();
 }
 
-	} catch (\Throwable $th) {
-	    echo("No se pudo conectar: $th");
-	}
-
-
 
  ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -102,11 +59,6 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 	</nav>
 
 </div>
-<!-- <?php 
-echo  "<h1 style=background:#fff;>esto es header ingresado con PHP  </h1>";
-echo "<h1 style=background:#fff;> You are now logged in as: ".$_SESSION['nombre']."</h1><br>";
- ?> -->
-
 
  
 
@@ -184,6 +136,3 @@ Esta parte se crea para añadir las cajas de texto de la parte de abajo
 <footer class="footie"> Todos los derechos reservados hecho por Emanuel Lopez</footer>
 </body>
 </html>
-
-
-

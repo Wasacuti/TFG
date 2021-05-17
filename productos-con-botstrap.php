@@ -18,15 +18,16 @@ echo $varsesion;
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estilosIndex.css" type="text/css">
+       
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>productos con bootstrap</title>
+		<link rel="stylesheet" href="estilosIndex.css" type="text/css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        
 		
-		
-		
-
-		
-		<meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+	
         <title>Distribuciones DPA</title>
     </head>
     <body id="fondoimagen">
@@ -87,10 +88,10 @@ Se llama a la función verificar de javascript una vez que haya cargado completa
 
 </div>
 
- <?php 
-echo  "<h1 style=background:#fff;>esto es header ingresado con PHP  </h1>";
-echo "<h1 style=background:#fff;> You are now logged in as: ".$_SESSION['nombre']."</h1><br>";
- ?> 
+<?php 
+//Si se quiere imprimir el nombre de la persona que esta en linea
+//echo "<h1 style=background:#fff;> You are now logged in as: ".$_SESSION['nombre']."</h1><br>";
+ ?>
 
 
 <div class="encabezado">
@@ -98,17 +99,16 @@ echo "<h1 style=background:#fff;> You are now logged in as: ".$_SESSION['nombre'
 Productos disponibles
 
 </div>
- 
 
 
-<div class="grid-productos">
-	
-<?php
-$sql = "select productos.id_producto, marca.marca_nombre,productos.modelo, productos.descripcion,productos.imagen, productos.precio from productos inner join marca on productos.marca_id=marca.id_marca WHERE inventario=1"; //Esta consulta para consultar los productos en la BD
+ <div class="row" style>
+	<!-- Este es el condigo PHP para solicitar productos de la BASE DE DATOS -->
+	<?php
+$sql = "select marca.marca_nombre,productos.modelo, productos.descripcion,productos.imagen from productos inner join marca on productos.marca_id=marca.id_marca WHERE inventario=1"; //Esta consulta para consultar los productos en la BD
 
 $result = $conexion->query(	$sql); //Se envía los datos a la BD
 $fila=0;
-
+//Esto era para hacer pruebas para ver si se reciben los datos de la BD
 //print_r(mysqli_fetch_array($result));
 // echo("<script>console.log('".$fila['marca_nombre']."')</script>");
 	// echo("<script>console.log('".$fila['modelo']."')</script>");
@@ -119,93 +119,43 @@ $fila=0;
 while($fila=mysqli_fetch_array($result)){
 	
 	?>
+
+
+	<!-- Aqui termina la consulta PHP -->
+
+
+ 
+<div class="col-md-4">
+
+
+
+	<div class="card text center">
+		<img class="card-img-top" src="<?php echo ($fila['imagen'])?>" alt="">
+		<div class="card-body" style="height: 300px;">
+			<h5 class="card-title"><?php   echo ($fila['marca_nombre']." ". $fila['modelo'] )    ?></h5>
+			<p class="card-text"><?php   echo ($fila['descripcion'])    ?></p>
+		</div>
+	</div>
+	</div>
+
 	
-
-
-
-	
-<div class="caja-prod"> 
-<img src="<?php echo ($fila['imagen'])?>" alt="lenovo socio comercial">
-<h1><?php   echo ($fila['marca_nombre']." ". $fila['modelo'] )    ?></h1>
-<p> <?php   echo ($fila['descripcion'])    ?></p>
-<p> <?php   echo "<p style=text-align:center;>₡". ($fila['precio']) ."</p>"   ?></p>
-				
-						
-
-					
-<!-- ($fila['modelo'] ) ?> -->
-<!-- ($fila['descripcion'])  -->
-
-<form action="validar_compra.php" method="post">
-	<input type="hidden" name="id_producto" value="<?php  echo openssl_encrypt($fila['id_producto'], ENCRIPTADO, LLAVE)  ?> ">
- <input type="hidden" name="marca" value="<?php  echo openssl_encrypt($fila['marca_nombre'], ENCRIPTADO, LLAVE)  ?> ">
- <input type="hidden" name="modelo"  value="<?php  echo openssl_encrypt($fila['modelo'], ENCRIPTADO, LLAVE) ?>  ">   
- <input type="hidden" name="descripcion"  value="<?php echo  openssl_encrypt($fila['descripcion'], ENCRIPTADO, LLAVE)   ?>">
- <input type="hidden" name="precio"  value="<?php echo  openssl_encrypt($fila['precio'], ENCRIPTADO, LLAVE)   ?>">
-
-
-<button class="btn" type="submit"> Comprar</button>
-		</form>			 
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-
+	<?php
 
 }
 
 
-
-
-
-
 ?>
-	
+
+
+
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <footer class="footie"> Todos los derechos reservados hecho por Emanuel Lopez</footer>
 </body>
-
-<?php  
-
-print_r($_POST) ;
-
-
-
-
- ?>
-
 <script src="validaciones.js" ></script>
 </html>

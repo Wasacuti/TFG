@@ -49,7 +49,7 @@ if (isset($_GET['error'])==true) {
 <button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
 
 <br>
-<a href="#">
+<a href="Registrar_usuario.php">
    <input type="button" class="btn btn-primary btn-block" value="Regístrate" />
 </a>
 

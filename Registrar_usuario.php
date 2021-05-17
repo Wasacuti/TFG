@@ -10,18 +10,13 @@
         <link rel="stylesheet" type="text/css" href="estilos.css">
     </head>
     <body class="imgback">
-      
+
+      <!-- Esto es para posecionar el contenedor en el centro de la pantalla -->
 <section class="container-fluid ">
   <section class="row justify-content-center">
 <section class="col-12 col-sm-6 col-md-3">
-<?php 
-if (isset($errorLogin)) {
-  echo "$errorLogin";
-  
-}
 
- ?>
-
+<!-- Se llama a registro.php el cúal realiza las validaciones si los datos están correctamente y si están bien los guarda en la BD -->
 <form action="registro.php" method="post" class="form-container-registro" >
 
 
@@ -46,27 +41,41 @@ if (isset($errorLogin)) {
     </div>
 
     <div class="form-group">
+      <label for="">Repita la Contraseña</label>
+      <input type="password" class="form-control" name="txt_pass_confirmar" id="" placeholder="Password">
+    </div>
+
+    <div class="form-group">
       <label for="">Teléfono</label>
       <input type="number" class="form-control" name="txt_tel" id="" placeholder="teléfono">
     </div>
     
     <div class="form-group">
       <label for="">Dirección</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" name="txt_direcion" rows="2" placeholder="dirección exacta"></textarea>
+      <textarea class="form-control" id="" name="txt_direcion" rows="2" placeholder="dirección exacta"></textarea>
 
 
       <!-- <input type="password" class="form-control" name="txt_direcion" id="" placeholder="Dirección exacta"> -->
     </div>
 
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" name="check" id="">
+  <label class="form-check-label" for="defaultCheck1">
+    <a href=""> Acepto los terminos de uso</a>
+    
+   
+  </label>
+</div>
+<br>
 
 
 
 
 
     <?php 
-if (isset($_GET['error'])==true) {
+if (isset($_GET['respuesta'])==true) {
  
-  $error_login=$_REQUEST["error"];
+  $error_login=$_REQUEST["respuesta"];
 switch ($error_login) {
   case '1':
     echo '<p>Favor ingresar todos los datos</p>';
@@ -83,11 +92,17 @@ switch ($error_login) {
           echo '<p>Correo ya se encuentra registrado</p>';
           break;
           case '5':
-            echo '<p>Datos guardados correctamente.</p>';
+            echo '<p>Favor acepte los terminos de uso</p>';
             break;
+            case '6':
+              echo '<p>Claves no coinciden.</p>';
+              break;
+              case '7':
+                echo '<p>Datos guardados correctamente.</p>';
+                break;
   
   default:
-    echo 'Algo malo paso';
+    echo 'Algo paso';
     break;
 }
   
@@ -98,11 +113,11 @@ switch ($error_login) {
 
 
  ?>
-<button type="submit" class="btn btn-primary btn-block">Iniciar sesión</button>
+<button type="submit" class="btn btn-primary btn-block">Regístrate</button>
 
 <br>
 <a href="#">
-   <input type="button" class="btn btn-primary btn-block" value="Regístrate" />
+   <input type="button" class="btn btn-primary btn-block" value="Iniciar sesión" />
 </a>
 
 </form>
